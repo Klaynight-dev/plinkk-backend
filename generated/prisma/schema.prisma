@@ -43,12 +43,17 @@ model User {
   selectedCanvasIndex              Int?    @default(16)
 
   // Relations
-  links       Link[]
-  labels      Label[]
-  socialIcons SocialIcon[]
-  background  BackgroundColor[]
-  neonColors  NeonColor[]
-  statusbar   Statusbar?
+  links         Link[]
+  labels        Label[]
+  socialIcons   SocialIcon[]
+  background    BackgroundColor[]
+  neonColors    NeonColor[]
+  statusbar     Statusbar?
+  name          String
+  emailVerified Boolean           @default(false)
+  image         String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @default(now()) @updatedAt
 }
 
 model Link {
